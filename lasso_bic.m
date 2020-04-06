@@ -157,7 +157,7 @@ for rep =1:trial
     
 end
 
-
+save('lasso_data','error_l0_bic','error_l0_lasso','error_bic','error_lasso')
 subplot(2,2,1)
 boxplot(error_l0_bic,'PlotStyle','compact')
 title('$$ l_2(\beta) $$ (Forward stepwise + BIC)','interpreter','latex','Fontsize',15)
