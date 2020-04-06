@@ -8,7 +8,7 @@ clc
 load heat
 [xx,yy]=meshgrid(x,y);
 index = 50;
-eps = 0.8;
+eps = 0.2;
 
 
 %% prepare derivative 
@@ -138,7 +138,7 @@ for times =1:time
         
         %% optimal design
         fprintf('(error_regression, error_gp) = (%.3f, %.3f)\n', tol, sigma)
-        [chosen_index, index_plot]=optimal_design(Theta_true,Theta,chosen_index,n_s,sigma,tol,X);
+        [chosen_index, index_plot]=D_optimality(Theta_true,Theta,chosen_index,n_s,sigma,tol,X);
         x0 = X(chosen_index,:);
         u0 = U(chosen_index,:);
    
@@ -155,15 +155,15 @@ for times =1:time
 end
 
 
-dlmwrite('advection-dispersion8.txt',error);
-dlmwrite('advection-dispersion8.txt',error_l0,'-append');
-dlmwrite('advection-dispersion8.txt',sample,'-append');
+dlmwrite('D_optimal2.txt',error);
+dlmwrite('D_optimal2.txt',error_l0,'-append');
+dlmwrite('D_optimal2.txt',sample,'-append');
 
-dlmwrite('advection-dispersion8.txt',mean(error));
-dlmwrite('advection-dispersion8.txt',std(error),'-append');
-dlmwrite('advection-dispersion8.txt',mean(error_l0),'-append');
-dlmwrite('advection-dispersion8.txt',std(error_l0),'-append');
-dlmwrite('advection-dispersion8.txt',mean(sample),'-append');
-dlmwrite('advection-dispersion8.txt',std(sample),'-append');
+dlmwrite('D_optimal2.txt',mean(error));
+dlmwrite('D_optimal2.txt',std(error),'-append');
+dlmwrite('D_optimal2.txt',mean(error_l0),'-append');
+dlmwrite('D_optimal2.txt',std(error_l0),'-append');
+dlmwrite('D_optimal2.txt',mean(sample),'-append');
+dlmwrite('D_optimal2.txt',std(sample),'-append');
 
 

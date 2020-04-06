@@ -6,7 +6,7 @@ clc
 load heat
 [xx,yy]=meshgrid(x,y);
 index = 50;
-eps = 0.2;
+eps = 0.8;
 
 
 %% prepare derivative 
@@ -97,7 +97,7 @@ for times =1:time
         if error_1 == 0
             error_2 = norm(cof - cof_last,2)/norm(cof_last,2);
            
-            if error_2 < .01
+            if error_2 < 1e-9
                 break
             end
         end
@@ -130,15 +130,15 @@ for times =1:time
 end
 
 
-dlmwrite('advection-dispersion_space-filling2.txt',error);
-dlmwrite('advection-dispersion_space-filling2.txt',error_l0,'-append');
-dlmwrite('advection-dispersion_space-filling2.txt',sample,'-append');
+dlmwrite('space-filling8.txt',error);
+dlmwrite('space-filling8.txt',error_l0,'-append');
+dlmwrite('space-filling8.txt',sample,'-append');
 
-dlmwrite('advection-dispersion_space-filling2.txt',mean(error));
-dlmwrite('advection-dispersion_space-filling2.txt',std(error),'-append');
-dlmwrite('advection-dispersion_space-filling2.txt',mean(error_l0),'-append');
-dlmwrite('advection-dispersion_space-filling2.txt',std(error_l0),'-append');
-dlmwrite('advection-dispersion_space-filling2.txt',mean(sample),'-append');
-dlmwrite('advection-dispersion_space-filling2.txt',std(sample),'-append');
+dlmwrite('space-filling8.txt',mean(error));
+dlmwrite('space-filling8.txt',std(error),'-append');
+dlmwrite('space-filling8.txt',mean(error_l0),'-append');
+dlmwrite('space-filling8.txt',std(error_l0),'-append');
+dlmwrite('space-filling8.txt',mean(sample),'-append');
+dlmwrite('space-filling8.txt',std(sample),'-append');
 
 
