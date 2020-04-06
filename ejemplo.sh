@@ -31,4 +31,4 @@
 cd /home/jchen168/heat
 # /share/apps/matlab/R2017a/bin/matlab -nodisplay -nosplash -r advection_dispersion
 # /share/apps/matlab/R2017a/bin/matlab -nodisplay -nosplash -r space_filling
-/share/apps/matlab/R2017a/bin/matlab -nodisplay -nosplash -r D_optimal
+/share/apps/matlab/R2017a/bin/matlab -nodisplay -nosplash -r lasso_bic
